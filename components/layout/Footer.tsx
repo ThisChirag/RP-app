@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 
 export function Footer() {
   return (
@@ -10,12 +11,15 @@ export function Footer() {
       <Container className="relative">
         <div className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4 lg:col-span-2">
-            <Link href="/" className="inline-flex flex-col">
-              <span className="font-serif text-3xl font-semibold text-primary">
-                RP Musical
-              </span>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Rhythm. Culture. Celebration.
+            <Link href="/" className="inline-flex items-center gap-3">
+              <BrandLogo className="h-12 w-12 rounded-2xl" />
+              <span>
+                <span className="block font-serif text-3xl font-semibold text-primary">
+                  RP Musical
+                </span>
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  Rhythm. Culture. Celebration.
+                </span>
               </span>
             </Link>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">

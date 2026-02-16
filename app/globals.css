@@ -177,6 +177,23 @@
     text-wrap: balance;
   }
 
+  .brand-logo-light,
+  .brand-logo-dark {
+    transition: opacity 220ms ease;
+  }
+
+  .brand-logo-dark {
+    opacity: 0;
+  }
+
+  :root[data-theme="dark"] .brand-logo-light {
+    opacity: 0;
+  }
+
+  :root[data-theme="dark"] .brand-logo-dark {
+    opacity: 1;
+  }
+
   @keyframes hero-card-sweep {
     0% {
       transform: translateX(-62%);

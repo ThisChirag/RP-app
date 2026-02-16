@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -49,12 +50,18 @@ export function Navbar() {
     >
       <Container>
         <div className="flex h-20 items-center justify-between gap-3 py-3">
-          <Link href="/" className="group inline-flex min-w-0 flex-col">
-            <span className="truncate font-serif text-2xl font-semibold leading-none text-primary sm:text-3xl">
-              RP Musical
-            </span>
-            <span className="truncate text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-xs">
-              Dance & Live Performances
+          <Link href="/" className="group inline-flex min-w-0 items-center gap-3">
+            <BrandLogo
+              priority
+              className="transition-transform duration-300 group-hover:scale-[1.04]"
+            />
+            <span className="min-w-0">
+              <span className="block truncate font-serif text-2xl font-semibold leading-none text-primary sm:text-3xl">
+                RP Musical
+              </span>
+              <span className="block truncate text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-xs">
+                Dance & Live Performances
+              </span>
             </span>
           </Link>
 
