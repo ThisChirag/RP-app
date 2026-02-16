@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --background: #f8f3eb;
+  --foreground: #1f1a17;
+
+  --card: #fffdf9;
+  --card-foreground: #1f1a17;
+  --surface: #fcf7f0;
+
+  --primary: #842339;
+  --primary-foreground: #fff8ef;
+
+  --secondary: #cc9832;
+  --secondary-foreground: #2e1f03;
+
+  --accent: #f0e2cf;
+  --accent-foreground: #4b3320;
+
+  --muted: #efe6d8;
+  --muted-foreground: #64584c;
+
+  --border: #dacdb9;
+  --input: #c8b89f;
+  --ring: #ab5c3a;
+
+  --shadow-color: 24 20 14;
+
+  --font-serif:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
+    serif;
+  --font-display:
+    "Snell Roundhand", "URW Chancery L", "Brush Script MT", cursive;
+  --font-sans:
+    "Avenir Next", "Segoe UI", "Trebuchet MS", "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #130f0b;
+  --foreground: #f6efe5;
+
+  --card: #1d1712;
+  --card-foreground: #f6efe5;
+  --surface: #17120d;
+
+  --primary: #df7089;
+  --primary-foreground: #210a10;
+
+  --secondary: #edc469;
+  --secondary-foreground: #231a05;
+
+  --accent: #2f251a;
+  --accent-foreground: #f6e7cf;
+
+  --muted: #261e16;
+  --muted-foreground: #bda98e;
+
+  --border: #3a3024;
+  --input: #4a3d2e;
+  --ring: #efb778;
+
+  --shadow-color: 0 0 0;
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --font-serif: var(--font-serif);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    background:
+      radial-gradient(
+        circle at 15% 10%,
+        color-mix(in srgb, var(--secondary) 14%, transparent) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 85% 5%,
+        color-mix(in srgb, var(--primary) 16%, transparent) 0%,
+        transparent 35%
+      ),
+      linear-gradient(180deg, var(--surface) 0%, var(--background) 100%);
+    color: var(--foreground);
+    font-family: var(--font-sans), sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif), serif;
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 25%, transparent);
+    color: var(--foreground);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .page-shell {
+    @apply min-h-screen;
+  }
+
+  .page-hero {
+    @apply relative overflow-hidden border-b border-border/70 py-16 sm:py-20;
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--primary) 12%, transparent) 0%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 50%,
+        transparent 100%
+      ),
+      color-mix(in srgb, var(--card) 85%, transparent);
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--border) 26%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--border) 26%, transparent) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  .glass-panel {
+    @apply rounded-2xl border border-border/70 bg-card/70 backdrop-blur-md;
+    box-shadow:
+      0 10px 35px -20px rgb(var(--shadow-color) / 0.55),
+      inset 0 1px 0 color-mix(in srgb, var(--card) 80%, transparent);
+  }
+
+  .display-script {
+    font-family: var(--font-display), serif;
+  }
+
+  .balanced-text {
+    text-wrap: balance;
+  }
 }
