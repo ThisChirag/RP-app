@@ -49,10 +49,43 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-          className="mx-auto max-w-4xl balanced-text font-serif text-4xl font-semibold leading-tight sm:text-6xl lg:text-7xl"
+          className="hero-headline-card group mx-auto max-w-4xl balanced-text font-serif text-4xl font-semibold leading-tight sm:text-6xl lg:text-7xl"
         >
           The Stage Where Tradition Meets
-          <span className="block display-script text-secondary">Modern Spectacle</span>
+          <motion.span
+            animate={
+              reduceMotion
+                ? undefined
+                : {
+                    x: [0, 2, 0, -2, 0],
+                    y: [0, -2, 0, 1, 0],
+                    rotate: [0, -0.5, 0, 0.5, 0],
+                  }
+            }
+            transition={
+              reduceMotion
+                ? undefined
+                : {
+                    duration: 7.2,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }
+            }
+            whileHover={
+              reduceMotion
+                ? undefined
+                : {
+                    y: [0, -8, 0],
+                    rotate: [0, -1.1, 0.65, 0],
+                    scale: [1, 1.04, 1],
+                    transition: { duration: 0.62, ease: [0.22, 1, 0.36, 1] },
+                  }
+            }
+            className="hero-highlight block display-script text-secondary"
+          >
+            Modern Spectacle
+          </motion.span>
         </motion.h1>
         <motion.p
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}

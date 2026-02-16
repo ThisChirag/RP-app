@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "@/components/theme/ThemeProvider";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +12,18 @@ interface ThemeToggleProps {
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
   const { resolvedTheme, toggleTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+
+  const isDark = mounted && resolvedTheme === "dark";
+  const label = mounted
+    ? isDark
+      ? "Switch to light theme"
+      : "Switch to dark theme"
+    : "Toggle theme";
 
   return (
     <button
@@ -21,12 +33,12 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
         "relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-card/80 text-foreground shadow-sm transition-colors hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className
       )}
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      aria-label={label}
+      title={label}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span
-          key={isDark ? "moon" : "sun"}
+          key={mounted ? (isDark ? "moon" : "sun") : "initial"}
           initial={{ opacity: 0, y: -8, rotate: -45 }}
           animate={{ opacity: 1, y: 0, rotate: 0 }}
           exit={{ opacity: 0, y: 8, rotate: 45 }}
