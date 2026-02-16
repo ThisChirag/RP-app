@@ -15,7 +15,7 @@ const services = [
     {
         title: "Folk Dance",
         description: "Vibrant and energetic folk performances from Rajasthan, Gujarat, and Punjab.",
-        imageSrc: "https://images.unsplash.com/photo-1621255554157-b45d0706596e?q=80&w=1974&auto=format&fit=crop",
+        imageSrc: "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1974&auto=format&fit=crop",
         href: "/services",
     },
     {

@@ -12,7 +12,7 @@ const domesticEvents = [
         date: "Jan 15, 2024",
         location: "Jaipur, Rajasthan",
         description: "Performance at the grand opening of the Jaipur Cultural Mahotsav, featuring a 50-member troupe.",
-        imageSrc: "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=1974&auto=format&fit=crop",
+        imageSrc: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
     },
     {
         title: "Corporate Gala Dinner",
@@ -43,7 +43,7 @@ const internationalEvents = [
         date: "May 05, 2023",
         location: "Dubai, UAE",
         description: "A mesmerizing performance for dignitaries from around the world celebrating cultural unity.",
-        imageSrc: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop",
+        imageSrc: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1974&auto=format&fit=crop",
     },
 ];
 

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Calendar, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
 interface EventCardProps {
     title: string;
@@ -27,7 +27,7 @@ export function EventCard({
       )}
     >
       <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl">
-        <Image
+        <ImageWithFallback
           src={imageSrc}
           alt={title}
           fill

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
 interface ServiceCardProps {
     title: string;
@@ -25,9 +25,9 @@ export function ServiceCard({
         "group glass-panel block overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1",
         className
       )}
-    >
+      >
       <div className="relative aspect-[16/11] overflow-hidden rounded-t-2xl">
-        <Image
+        <ImageWithFallback
           src={imageSrc}
           alt={title}
           fill

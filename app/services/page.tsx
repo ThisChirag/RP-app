@@ -16,7 +16,7 @@ const services = [
     {
         title: "Folk Dance",
         description: "We bring the vibrant colors of Indian villages to the stage with authentic costumes and energetic performances of Garba, Bhangra, and Ghoomar.",
-        imageSrc: "https://images.unsplash.com/photo-1621255554157-b45d0706596e?q=80&w=1974&auto=format&fit=crop",
+        imageSrc: "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1974&auto=format&fit=crop",
         href: "/contact",
     },
     {

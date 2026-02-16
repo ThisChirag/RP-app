@@ -4,8 +4,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
 const galleryImages = [
   {
@@ -17,15 +17,15 @@ const galleryImages = [
     alt: "Fusion dance group in motion",
   },
   {
-    src: "https://images.unsplash.com/photo-1621255554157-b45d0706596e?q=80&w=1974&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1974&auto=format&fit=crop",
     alt: "Traditional folk dance costume showcase",
   },
   {
-    src: "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=1974&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
     alt: "Concert crowd and stage lights",
   },
   {
-    src: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1974&auto=format&fit=crop",
     alt: "Live stage lighting and performers",
   },
   {
@@ -61,12 +61,12 @@ export default function GalleryPage() {
           <Stagger className="grid auto-rows-[190px] gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((item, index) => (
               <StaggerItem
-                key={item.src}
+                key={`${item.src}-${index}`}
                 className={cn(index % 5 === 0 ? "sm:row-span-2" : "row-span-1")}
               >
                 <div className="glass-panel group h-full overflow-hidden rounded-2xl p-2">
                   <div className="relative h-full min-h-[170px] overflow-hidden rounded-xl">
-                    <Image
+                    <ImageWithFallback
                       src={item.src}
                       alt={item.alt}
                       fill
