@@ -13,7 +13,7 @@ export default function FounderPage() {
       <PageHeader
         eyebrow="Leadership"
         title="Meet The Visionary Behind RP Musical"
-        description="Ravi Prakash (RP) transformed a regional dance initiative into a globally recognized performance collective."
+        description="Rekha Parihar transformed a regional dance initiative into a globally recognized performance collective."
       />
 
       <Section>
@@ -23,8 +23,8 @@ export default function FounderPage() {
               <div className="glass-panel mx-auto max-w-sm p-3 lg:sticky lg:top-28">
                 <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop"
-                    alt="Founder portrait"
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1887&auto=format&fit=crop"
+                    alt="Sample female founder portrait"
                     fill
                     sizes="(max-width: 1024px) 100vw, 35vw"
                     className="object-cover"
@@ -36,33 +36,46 @@ export default function FounderPage() {
             <Stagger className="space-y-5">
               <StaggerItem>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/85">
-                  Ravi Prakash (RP)
+                  Rekha Parihar
                 </p>
                 <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
-                  Artistic Director & Choreographer
+                  Founder, Artistic Director & Choreographer
                 </h2>
+                <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+                  Cultural storyteller, choreographer, and production designer.
+                </p>
               </StaggerItem>
 
-              <StaggerItem>
+              <StaggerItem className="glass-panel rounded-2xl p-6">
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  With over two decades of stage experience, Ravi Prakash built RP
-                  Musical with a clear purpose: protect cultural authenticity while
-                  presenting it in a contemporary, globally relatable format.
+                  Rekha Parihar founded RP Musical with one clear vision: protect
+                  the soul of Indian dance while presenting it with modern stage
+                  design and global production quality.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  Trained in Kathak and rooted in folk traditions, she choreographs
+                  performances that blend storytelling, live rhythm, and strong
+                  visual transitions for weddings, festivals, and corporate shows.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  She now leads and mentors 50+ artists, ensuring every performance
+                  feels culturally authentic, emotionally engaging, and audience-first.
                 </p>
               </StaggerItem>
-              <StaggerItem>
-                <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Trained in Kathak and deeply immersed in folk traditions, he is
-                  known for combining narrative choreography, live rhythm, and
-                  dramatic transitions that make every show immersive.
-                </p>
-              </StaggerItem>
-              <StaggerItem>
-                <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Today he mentors an ensemble of 50+ artists and continues to
-                  direct performances across festivals, luxury weddings, and
-                  international cultural forums.
-                </p>
+
+              <StaggerItem className="grid gap-3 sm:grid-cols-3">
+                {[
+                  { label: "Experience", value: "20+ Years" },
+                  { label: "Artists Mentored", value: "50+" },
+                  { label: "Countries", value: "10+" },
+                ].map((item) => (
+                  <div key={item.label} className="glass-panel rounded-xl p-4 text-center">
+                    <p className="text-xl font-bold text-secondary">{item.value}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
               </StaggerItem>
 
               <StaggerItem className="glass-panel rounded-2xl p-6">

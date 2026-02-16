@@ -58,11 +58,11 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.58, ease: "easeOut", delay: 0.16 }}
-          className="mx-auto mt-6 max-w-2xl balanced-text text-base leading-relaxed text-neutral-200 sm:text-lg"
+          className="mx-auto mt-6 max-w-3xl rounded-2xl border border-white/20 bg-black/35 px-5 py-4 text-sm leading-relaxed text-neutral-100 backdrop-blur-md sm:px-7 sm:text-base"
         >
-          RP Musical and Dance Group creates emotionally rich performances for
-          weddings, corporate events, and international festivals with live
-          music, choreography, and visual storytelling.
+          From wedding sangeets to corporate showcases and global festivals, we
+          design high-impact live music and dance productions that feel
+          culturally rich, emotionally engaging, and visually unforgettable.
         </motion.p>
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}

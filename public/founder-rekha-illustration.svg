@@ -1,0 +1,114 @@
+<svg width="960" height="1200" viewBox="0 0 960 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="120" y1="80" x2="840" y2="1140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF4DB"/>
+      <stop offset="0.45" stop-color="#F3D8B8"/>
+      <stop offset="1" stop-color="#C88F7D"/>
+    </linearGradient>
+    <linearGradient id="hairGradient" x1="318" y1="300" x2="676" y2="770" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#271C1A"/>
+      <stop offset="1" stop-color="#3E2523"/>
+    </linearGradient>
+    <linearGradient id="dressGradient" x1="260" y1="700" x2="740" y2="1140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B64864"/>
+      <stop offset="0.55" stop-color="#8B2F4B"/>
+      <stop offset="1" stop-color="#622039"/>
+    </linearGradient>
+    <radialGradient id="haloGradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(484 354) rotate(90) scale(280 278)">
+      <stop stop-color="#FFF6E0"/>
+      <stop offset="1" stop-color="#FFF6E0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="0" y="0" width="960" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <style>
+      .petal {
+        animation: drift 8s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .petal.two { animation-delay: 1.2s; }
+      .petal.three { animation-delay: 2.4s; }
+      .petal.four { animation-delay: 3.1s; }
+      .spark {
+        animation: pulse 4.2s ease-in-out infinite;
+      }
+      .spark.two { animation-delay: 1.4s; }
+      .spark.three { animation-delay: 2.1s; }
+      @keyframes drift {
+        0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.6; }
+        50% { transform: translateY(-14px) translateX(8px) rotate(6deg); opacity: 0.9; }
+        100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.6; }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect width="960" height="1200" rx="56" fill="url(#bgGradient)"/>
+
+  <g opacity="0.42">
+    <circle cx="170" cy="170" r="120" fill="#FFE8B5"/>
+    <circle cx="810" cy="220" r="82" fill="#FFD29A"/>
+    <path d="M-45 915C215 770 410 870 615 730C758 634 857 642 1005 748V1220H-45V915Z" fill="#A46874"/>
+    <path d="M-25 1004C198 872 362 936 568 855C704 804 816 814 988 912V1220H-25V1004Z" fill="#8B4F66"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <ellipse cx="482" cy="700" rx="250" ry="110" fill="#FCE7C0"/>
+  </g>
+
+  <circle cx="484" cy="354" r="280" fill="url(#haloGradient)"/>
+
+  <g class="petal one">
+    <ellipse cx="190" cy="356" rx="18" ry="9" fill="#FCE7C0"/>
+    <ellipse cx="210" cy="374" rx="12" ry="6" fill="#F8D3A4"/>
+  </g>
+  <g class="petal two">
+    <ellipse cx="756" cy="334" rx="16" ry="8" fill="#F9DFBD"/>
+    <ellipse cx="738" cy="352" rx="10" ry="5" fill="#F2C694"/>
+  </g>
+  <g class="petal three">
+    <ellipse cx="730" cy="740" rx="14" ry="7" fill="#FCE7C0"/>
+    <ellipse cx="746" cy="756" rx="8" ry="4" fill="#F8D3A4"/>
+  </g>
+  <g class="petal four">
+    <ellipse cx="228" cy="806" rx="14" ry="7" fill="#FBE2BC"/>
+    <ellipse cx="206" cy="822" rx="8" ry="4" fill="#F0BC88"/>
+  </g>
+
+  <g>
+    <path d="M326 770C336 642 392 548 482 534C572 548 628 642 638 770V932H326V770Z" fill="url(#dressGradient)"/>
+    <path d="M282 1194C290 966 352 824 482 820C612 824 674 966 682 1194H282Z" fill="#5F2038"/>
+
+    <path d="M356 794C364 712 416 660 482 654C548 660 600 712 608 794V876H356V794Z" fill="#E6C5A8"/>
+    <path d="M384 862C396 824 432 798 482 794C532 798 568 824 580 862V920H384V862Z" fill="#C88B6D"/>
+
+    <path d="M364 628C358 520 408 432 482 412C556 432 606 520 600 628C596 710 544 778 482 778C420 778 368 710 364 628Z" fill="#E6C5A8"/>
+    <path d="M430 662C430 646 442 634 458 634H506C522 634 534 646 534 662V678C534 694 522 706 506 706H458C442 706 430 694 430 678V662Z" fill="#CF8A69" opacity="0.45"/>
+
+    <path d="M308 560C308 442 386 344 482 332C578 344 656 442 656 560V638C624 562 564 516 482 516C400 516 340 562 308 638V560Z" fill="url(#hairGradient)"/>
+    <path d="M334 566C334 448 404 374 482 362C560 374 630 448 630 566V608C606 544 552 510 482 510C412 510 358 544 334 608V566Z" fill="#3E2726"/>
+
+    <path d="M416 600C416 584 428 572 444 572C460 572 472 584 472 600V604C472 620 460 632 444 632C428 632 416 620 416 604V600Z" fill="#2F1F1B"/>
+    <path d="M492 600C492 584 504 572 520 572C536 572 548 584 548 600V604C548 620 536 632 520 632C504 632 492 620 492 604V600Z" fill="#2F1F1B"/>
+
+    <path d="M430 692C446 712 466 722 482 722C498 722 518 712 534 692" stroke="#9C5D51" stroke-width="8" stroke-linecap="round"/>
+    <path d="M366 636C378 694 416 740 466 754C426 752 372 702 366 636Z" fill="#D18F70" opacity="0.5"/>
+    <path d="M598 636C586 694 548 740 498 754C538 752 592 702 598 636Z" fill="#D18F70" opacity="0.5"/>
+  </g>
+
+  <g class="spark one">
+    <circle cx="286" cy="268" r="4" fill="#FFF8EA"/>
+    <circle cx="302" cy="286" r="2.5" fill="#FFF8EA"/>
+  </g>
+  <g class="spark two">
+    <circle cx="678" cy="272" r="4" fill="#FFF8EA"/>
+    <circle cx="662" cy="288" r="2.5" fill="#FFF8EA"/>
+  </g>
+  <g class="spark three">
+    <circle cx="736" cy="466" r="3.6" fill="#FFF8EA"/>
+    <circle cx="718" cy="480" r="2.2" fill="#FFF8EA"/>
+  </g>
+</svg>
